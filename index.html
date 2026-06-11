@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Clases</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #e94560;
+      box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    header h1 span {
+      color: #e94560;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e94560;
+    }
+
+    /* ===== HERO / PRESENTACIÓN ===== */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      padding: 70px 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #1e2a4a;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e94560, #0f3460);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      box-shadow: 0 0 0 5px #e94560, 0 0 30px rgba(233, 69, 96, 0.5);
+      animation: pulseAvatar 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseAvatar {
+      0%, 100% { box-shadow: 0 0 0 5px #e94560, 0 0 30px rgba(233, 69, 96, 0.5); }
+      50%       { box-shadow: 0 0 0 8px #e94560, 0 0 50px rgba(233, 69, 96, 0.7); }
+    }
+
+    .hero-info {
+      max-width: 520px;
+    }
+
+    .hero-info .badge {
+      display: inline-block;
+      background: rgba(233, 69, 96, 0.15);
+      border: 1px solid #e94560;
+      color: #e94560;
+      font-size: 0.78rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-info h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero-info h2 span {
+      color: #e94560;
+    }
+
+    .hero-info .subject {
+      font-size: 1.1rem;
+      color: #a0b4cc;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero-info p {
+      font-size: 0.97rem;
+      color: #8899aa;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .info-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      background: rgba(15, 52, 96, 0.6);
+      border: 1px solid #1e3a5f;
+      color: #a0c4ff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.83rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== SECCIÓN DE CLASES ===== */
+    .classes-section {
+      padding: 50px 0 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 0 40px;
+    }
+
+    .section-title h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h3::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #e94560;
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    .section-title p {
+      color: #6677aa;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+
+    /* ===== CORREDOR / SCROLL HORIZONTAL ===== */
+    .corridor-wrapper {
+      position: relative;
+    }
+
+    .corridor-track {
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+      padding: 16px 40px 30px;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: #e94560 #1a1a2e;
+      cursor: grab;
+    }
+
+    .corridor-track:active {
+      cursor: grabbing;
+    }
+
+    .corridor-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .corridor-track::-webkit-scrollbar-track {
+      background: #1a1a2e;
+      border-radius: 3px;
+    }
+
+    .corridor-track::-webkit-scrollbar-thumb {
+      background: #e94560;
+      border-radius: 3px;
+    }
+
+    /* ===== TARJETA DE CLASE ===== */
+    .class-card {
+      flex: 0 0 280px;
+      background: #16213e;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #1e2a4a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .class-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(233, 69, 96, 0.25);
+      border-color: #e94560;
+    }
+
+    /* Thumbnail */
+    .card-thumbnail {
+      width: 100%;
+      height: 158px; /* Proporción ~16:9 para 280px de ancho */
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f3460, #533483);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .thumb-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(233,69,96,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(15,52,96,0.4) 0%, transparent 50%);
+    }
+
+    .thumb-icon {
+      font-size: 2.8rem;
+      z-index: 1;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+
+    .thumb-number {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      background: rgba(233, 69, 96, 0.85);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+
+
+    /* Card body */
+    .card-body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-label {
+      font-size: 0.72rem;
+      color: #e94560;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: #6677aa;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-footer {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-link-btn {
+      font-size: 0.8rem;
+      color: #a0c4ff;
+      text-decoration: none;
+      background: rgba(15, 52, 96, 0.6);
+      border: 1px solid #1e3a5f;
+      padding: 5px 14px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      font-weight: 600;
+    }
+
+    .class-card:hover .card-link-btn {
+      background: #e94560;
+      border-color: #e94560;
+      color: #fff;
+    }
+
+    .card-num-badge {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: rgba(233, 69, 96, 0.18);
+    }
+
+    /* ===== BOTONES DE NAVEGACIÓN DEL CORREDOR ===== */
+    .corridor-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(233, 69, 96, 0.85);
+      border: none;
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .corridor-btn:hover {
+      background: #e94560;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .corridor-btn.left  { left: 10px; }
+    .corridor-btn.right { right: 10px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0a0a14;
+      border-top: 1px solid #1e2a4a;
+      text-align: center;
+      padding: 24px 40px;
+      color: #445;
+      font-size: 0.85rem;
+    }
+
+    footer span {
+      color: #e94560;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      header { padding: 14px 20px; }
+      .hero  { padding: 40px 20px; gap: 30px; }
+      .hero-info h2 { font-size: 1.7rem; }
+      .corridor-track { padding: 16px 20px 24px; }
+      .class-card { flex: 0 0 240px; }
+      .card-thumbnail { height: 136px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>🎓 Portafolio <span>Académico</span></h1>
+    <nav>
+      <a href="#presentacion">Presentación</a>
+      <a href="#clases">Clases</a>
+    </nav>
+  </header>
+
+  <!-- ===== PRESENTACIÓN ===== -->
+  <section class="hero" id="presentacion">
+    <div class="avatar-wrapper">
+      <div class="avatar">🧑‍💻</div>
+    </div>
+
+    <div class="hero-info">
+      <div class="badge">✦ Estudiante</div>
+      <h2>Hola, soy <span>Melvin Josué Flores Jacomé</span></h2>
+      <p>
+          <p class="subject">📚 Materia: Diseño de Páginas Web &nbsp;|&nbsp; Ciclo 1 - 2026</p>
+        Soy estudiante de <strong style="color:#a0c4ff;">Técnico En Ingeniería en Diseño de Software</strong>, apasionado/a por el aprendizaje
+        continuo y el desarrollo de habilidades técnicas. En este Index encontrarás
+        el registro de todas mis clases y ejercicios realizados durante el curso.
+      </p>
+
+      
+      <div class="info-chips">
+        <span class="chip">🏫 ITCA - FEPADE</span>
+        <span class="chip">📅 Ciclo 1 - 2026 | Año 1</span>
+        <span class="chip">🌐 Grupo: B</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN DE CLASES ===== -->
+  <section class="classes-section" id="clases">
+    <div class="section-title">
+      <h3>📂 Mis Clases</h3>
+      <p>Desliza o usa las flechas para explorar todas las clases del curso</p>
+    </div>
+
+    <div class="corridor-wrapper">
+      <!-- Botón izquierdo -->
+      <button class="corridor-btn left" onclick="scrollCorridor(-1)" aria-label="Anterior">&#8592;</button>
+
+      <!-- Corredor horizontal -->
+      <div class="corridor-track" id="corridorTrack">
+
+        <!-- CLASE 1 -->
+        <a class="class-card" href="./html/Clase1/Clase1-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #1a1a2e, #e94560);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 01</div>
+            <div class="thumb-icon">🖥️</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 1</div>
+            <div class="card-title">Etiquetas HTML</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">01</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 2 -->
+        <a class="class-card" href="./html/Clase2/Clase2-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #0f3460, #533483);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 02</div>
+            <div class="thumb-icon">📝</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 2</div>
+            <div class="card-title">Etiquetas Básicas HTML</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">02</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 3 -->
+        <a class="class-card" href="./html/Clase3/Clase3-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #16213e, #0f7460);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 03</div>
+            <div class="thumb-icon">🎬</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 3</div>
+            <div class="card-title">Imágenes, Video y Audio</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">03</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 4 -->
+        <a class="class-card" href="./html/Clase4/Clase4-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #2d1b69, #e94560);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 04</div>
+            <div class="thumb-icon">📋</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 4</div>
+            <div class="card-title">Tablas</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">04</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 5 -->
+        <a class="class-card" href="./html/Clase5/Clase5-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #0f3460, #e94560);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 05</div>
+            <div class="thumb-icon">📊</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 5</div>
+            <div class="card-title">Formularios Básicos en HTML</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">05</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 6 -->
+        <a class="class-card" href="./html/Clase6/Clase6-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #1a4a1a, #4aaa4a);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 06</div>
+            <div class="thumb-icon">🎨</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 6</div>
+            <div class="card-title">Hoja de Estilos (CSS)</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">06</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 7 -->
+        <a class="class-card" href="./html/Clase7/Clase7-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #1a1a4a, #20a0e9);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 07</div>
+            <div class="thumb-icon">📦</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 7</div>
+            <div class="card-title">Modelo de Cajas con CSS</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">07</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 8 -->
+        <a class="class-card" href="./html/Clase8/Clase8-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #2a1a4a, #9b59b6);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 08</div>
+            <div class="thumb-icon">✨</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 8</div>
+            <div class="card-title">Dinamismo con CSS (Animaciones)</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">08</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 9 -->
+        <a class="class-card" href="./html/Clase9/Clase9-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #1a3a2a, #27ae60);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 09</div>
+            <div class="thumb-icon">🅱️</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 9</div>
+            <div class="card-title">Bootstrap</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">09</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CLASE 10 -->
+        <a class="class-card" href="./html/Clase10/Clase10-index.html" target="_blank">
+          <div class="card-thumbnail" style="background: linear-gradient(135deg, #3a1a1a, #e9a020);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-number">Clase 10</div>
+            <div class="thumb-icon">⚡</div>
+          </div>
+          <div class="card-body">
+            <div class="card-label">Clase 10</div>
+            <div class="card-title">Sintaxis Básica de JS, Funciones, Eventos y Acceso a Elementos HTML</div>
+            <div class="card-desc"></div>
+            <div class="card-footer">
+              <span class="card-link-btn">Ver ejercicios →</span>
+              <span class="card-num-badge">10</span>
+            </div>
+          </div>
+        </a>
+
+      </div><!-- fin corridor-track -->
+
+      <!-- Botón derecho -->
+      <button class="corridor-btn right" onclick="scrollCorridor(1)" aria-label="Siguiente">&#8594;</button>
+    </div><!-- fin corridor-wrapper -->
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Hecho por <span>Melvin Flores</span> &nbsp;|&nbsp; Portafolio Académico 2026 Ciclo 1</p>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ── Scroll por botones ──
+    function scrollCorridor(dir) {
+      const track = document.getElementById('corridorTrack');
+      track.scrollBy({ left: dir * 320, behavior: 'smooth' });
+    }
+
+    // ── Drag to scroll ──
+    const track = document.getElementById('corridorTrack');
+    let isDown = false, startX, scrollLeft;
+
+    track.addEventListener('mousedown', e => {
+      isDown = true;
+      track.classList.add('active');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    track.addEventListener('mouseleave', () => { isDown = false; });
+    track.addEventListener('mouseup',    () => { isDown = false; });
+
+    track.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x    = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // ── Scroll con rueda del mouse ──
+    track.addEventListener('wheel', e => {
+      e.preventDefault();
+      track.scrollBy({ left: e.deltaY * 2, behavior: 'smooth' });
+    }, { passive: false });
+  </script>
+</body>
+</html>

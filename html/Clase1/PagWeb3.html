@@ -1,0 +1,86 @@
+<!-- 3)	Desarrollar una página Web con las siguientes características:
+a)	El título de la página será Lenguajes de programación
+b)	Colocar la definición de cada uno, ventajas, desventajas y costos de los siguientes lenguajes de programación (PHP, VB y JAVA), haciendo uso de las etiquetas <p> y </p>. 
+c)	Colocar una imagen o color de fondo  -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes de programación</title>
+</head>
+<body style="background-color: #1c5485;">
+    <a href="./Clase1-index.html">← Volver al índice</a>
+
+    <h1 style="color: #c09f9f; text-align: center;">Lenguajes de programación</h1>
+
+    <h2 style="color: #e4ce06;">PHP</h2>
+    <!-- definición -->
+    <p>
+        PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de programación de código abierto diseñado específicamente para el desarrollo web. Se ejecuta en el servidor y permite crear sitios web dinámicos, procesar datos y conectarse con bases de datos.
+    </p>
+    <!-- Ventajas -->
+    <h2 style="color: #037c03;">Ventajas:</h2>
+    <p>
+        - Fácil de aprender: Tiene una curva de aprendizaje suave, lo que lo hace muy accesible para principiantes en comparación con otros lenguajes.<br>
+        - Gratuito y de código abierto: No requiere el pago de licencias, lo que reduce drásticamente los costos de desarrollo.<br>
+        - Integración nativa con la web: Se puede mezclar fácilmente con código HTML sin necesidad de configuraciones complejas.<br>
+        - Amplio ecosistema: Es la base de plataformas populares como WordPress y cuenta con frameworks potentes como Laravel y Symfony.<br>
+        - Multiplataforma: Funciona en prácticamente cualquier sistema operativo (Linux, Windows, macOS) y es compatible con las bases de datos más utilizadas.
+    </p>
+    <!-- Desventajas -->
+    <h2 style="color: #6b0279;">Desventajas:</h2>
+    <p>
+        - Problemas de seguridad: Al ser de código abierto, cualquier usuario (incluidos atacantes) puede estudiar su núcleo. Además, una mala configuración puede dejar el sitio vulnerable.<br>
+        - Mantenimiento en proyectos grandes: Si no se planifica bien, puede derivar en el llamado "código espagueti" (desorganizado y difícil de mantener) al escalar la aplicación.<br>
+        - Tipado débil: Su tipificación laxa puede dar lugar a errores de datos inesperados si el desarrollador no es estricto.<br>
+        - Rendimiento: Aunque ha mejorado enormemente con versiones modernas como PHP 8, en aplicaciones de altísimo rendimiento no suele competir tan bien como lenguajes compilados (ej. Go o Node.js).
+    </p>
+
+    <h2 style="color: #0c9c54;">VB</h2>
+    <!-- definición -->
+    <p>
+        VB son las siglas de Visual Basic, un lenguaje de programación y entorno de desarrollo creado por Microsoft. Permite a los programadores crear aplicaciones de forma rápida y sencilla mediante una interfaz gráfica, en lugar de escribir todo el código desde cero.
+    </p>
+    <!-- Ventajas -->
+    <h2 style="color: #978a11;">Ventajas:</h2>
+    <p>
+        - Curva de aprendizaje rápida: Su sintaxis es muy parecida al inglés natural, lo que lo hace ideal para principiantes y facilita la lectura del código.<br>
+        - Desarrollo Rápido (RAD): Su entorno de diseño permite crear interfaces gráficas de usuario (GUI) simplemente arrastrando y soltando botones, cuadros de texto y otros controles.<br>
+        - Integración con Windows: Tiene acceso nativo y completo a la API de Windows, lo que facilita el desarrollo de aplicaciones de escritorio empresariales (Windows Forms y WPF).<br>
+        - Gran comunidad y documentación: Al ser un lenguaje veterano y ampliamente utilizado en el ecosistema corporativo, es muy fácil encontrar ejemplos, foros y ayuda en línea.
+    </p>
+    <!-- Desventajas -->
+    <h2 style="color: #6b0279;">Desventajas:</h2>
+    <p>
+        -No es multiplataforma: Está diseñado principalmente para sistemas operativos Windows. Ejecutarlo en otros entornos requiere el uso de emuladores o intérpretes de terceros.<br>
+        -Evolución estancada: Microsoft ha priorizado el desarrollo de C# para sus nuevas tecnologías. Aunque Visual Basic sigue recibiendo soporte oficial, ya no incorpora las últimas innovaciones tecnológicas del ecosistema .NET.<br>
+        -Rendimiento: Al ser un lenguaje de alto nivel y estar gestionado por la máquina virtual de .NET, puede presentar problemas de rendimiento al compararse con lenguajes como C++.<br>
+        -Soporte limitado para multihilo: Crear aplicaciones que ejecuten múltiples tareas en paralelo (multihilo) suele ser complejo y requiere realizar llamadas directas a la API de Windows.
+    </p>
+
+    <h2 style="color: #0c9c54;">JAVA</h2>
+    <!-- definición -->
+    <p>
+        Java es un lenguaje de programación de propósito general y una plataforma informática orientada a objetos. Lanzado en 1995 por Sun Microsystems (actualmente propiedad de Oracle), se utiliza mundialmente para crear aplicaciones web, empresariales, de escritorio y móviles.
+    </p>
+    <!-- Ventajas -->
+    <h2 style="color: #978a11;">Ventajas:</h2>
+    <p>
+        - Multiplataforma (Portabilidad): Gracias a la Máquina Virtual de Java (JVM), cualquier código compilado puede ejecutarse en cualquier sistema operativo sin necesidad de ser reescrito.<br>
+        - Orientado a Objetos: Su estructura fomenta la creación de código modular, reutilizable y fácil de mantener a gran escala.<br>
+        - Gestión automática de memoria: Cuenta con un recolector de basura (Garbage Collector) que libera espacio automáticamente, evitando fugas de memoria.<br>
+        - Seguridad integrada: Dispone de estrictas políticas y mecanismos de verificación que aíslan el código, siendo muy seguro para aplicaciones corporativas y financieras.
+        - Gran comunidad y ecosistema: Al llevar más de 30 años en el mercado, cuenta con una inmensa cantidad de librerías, herramientas Open Source y frameworks consolidados (como Spring).
+    </p>
+    <!-- Desventajas -->
+    <h2 style="color: #6b0279;">Desventajas:</h2>
+    <p>
+        - Alto consumo de recursos: Debido a la capa adicional que representa la JVM, Java suele requerir más memoria RAM y potencia de CPU en comparación con lenguajes compilados de forma nativa.<br>
+        - Sintaxis verbosa: El código tiende a ser más largo y detallado que en otros lenguajes modernos (como Python), lo que a veces dificulta la lectura rápida del mismo.<br>
+        - Curva de aprendizaje: A pesar de ser estructurado, puede resultar complejo para principiantes debido a la gran cantidad de reglas estrictas de tipado y sintaxis.<br>
+        - Interfaz gráfica (GUI): Desarrollar interfaces de usuario nativas atractivas suele ser más complejo y requerir librerías adicionales frente a alternativas más modernas.
+    </p>
+    
+</body>
+</html>
