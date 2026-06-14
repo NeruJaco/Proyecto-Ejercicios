@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con etiquetas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Estilos para recrear el aspecto clásico de la tabla de la imagen */
+        table {
+            border-collapse: separate;
+            border-spacing: 2px;
+            border: 1px solid black;
+            width: 100%;
+            max-width: 900px;
+            font-family: serif;
+        }
+        th, td {
+            border: 1px solid gray;
+            padding: 4px 8px;
+            text-align: left;
+        }
+        caption {
+            caption-side: top;
+            padding: 10px;
+            font-style: normal;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .center-text {
+            text-align: center;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="p-8 bg-white">
+
+    <h1 class="text-left mb-8">Página web haciendo uso de las etiquetas de tablas</h1>
+
+    <div class="overflow-x-auto">
+        <table>
+            <caption>Etiqueta caption</caption>
+            
+            <!-- Fila 1: Título de la Escuela -->
+            <tr>
+                <td colspan="5" class="bold-text">Escuela Especializada en Ingenieria ITCA-FEPADE</td>
+            </tr>
+
+            <!-- Fila 2: Encabezados -->
+            <tr>
+                <th class="center-text">Apellido</th>
+                <th class="center-text">Nombre</th>
+                <th colspan="3" class="center-text">Notas</th>
+            </tr>
+
+            <!-- Fila 3: Estudiante 1 -->
+            <tr>
+                <td>Hernández</td>
+                <td>Juan</td>
+                <td>7.5</td>
+                <td>9.5</td>
+                <td>2.30</td>
+            </tr>
+
+            <!-- Fila 4: Estudiante 2 -->
+            <tr>
+                <td>Perez</td>
+                <td>Miguel</td>
+                <td>2</td>
+                <td>5</td>
+                <td>1.5</td>
+            </tr>
+
+            <!-- Fila 5: Información adicional y Comentarios -->
+            <tr>
+                <td colspan="2">Información adicional de los estudiantes</td>
+                <td colspan="3">Comentarios</td>
+            </tr>
+
+            <!-- Fila 6 y 7: Actitud y Detalle de comentarios -->
+            <tr>
+                <td colspan="2" rowspan="2">Explicación acerca de la actitud de los estudiantes en clases</td>
+                <td colspan="3">Comentario 1: Explicación acerca de la puntualidad de el alumno _________________</td>
+            </tr>
+            <tr>
+                <td colspan="3">Comentario 2: información de la responsabilidad del alumno _________________</td>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
+</html>
